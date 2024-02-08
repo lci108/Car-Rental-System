@@ -1,0 +1,33 @@
+The database consists of three tables:
+
+Cars: stores information about the cars available for rent. Each car has a unique car_id (integer) and car_name (string), a car_type (string) indicating the make and model of the car, an image (text) showing a picture of the car, hire_cost (integer) which is the cost of renting the car, capacity (integer) which represents the maximum number of passengers the car can accommodate, Type (string) indicating the category of the car (luxury, sports, or classic), and status (string) which can be either "Available" or "Rented".
+
+Client: stores information about the clients who rent the cars. Each client has a unique client_id (integer), fname (string) which is the first name of the client, email (string), username (string), password (string), phone (integer), location (string) and gender (string).
+
+Reservation: stores information about the reservations made by clients. Each reservation has a reservation_id (string) which is unique, customer_name (string) indicating the name of the client who made the reservation, car_id (integer) which is the id of the car reserved, start_date
+
+Keys:
+
+The cars table has a car_id field that serves as its primary key. 
+
+The reservation table has a car_id field that is a foreign key referencing the car_id field in the cars table. This suggests that the reservation table is used to keep track of reservations made by clients for specific cars.
+
+The client table also has a client_id field that serves as its primary key. 
+
+
+Connections:
+
+There would be a one-to-many relationship between the "cars" table and the "reservation" table, with the arrow pointing from "cars" to "reservation". This means that one car can have multiple reservations, but each reservation can only belong to one car.
+
+So, the arrow would point from the "car_id" field in the "cars" table to the "car_id" field in the "reservation" table, indicating that the "car_id" field in the "reservation" table is a foreign key referencing the "car_id" field in the "cars" table.
+
+There are no explicit foreign key relationships between the client table and the other tables, but the reservation table does include a customer_name field. It's possible that this field is intended to reference the fname field in the client table, indicating which client made the reservation.
+
+
+
+
+
+
+
+
+
